@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa Metro & CPTM SP — Pro</title>
+
+  <!-- Leaflet + MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="topbar">
+    <div class="title">Metro & CPTM SP — Map (Waze-like)</div>
+    <div class="controls">
+      <input id="searchBox" placeholder="Buscar estação (ex.: Sé)" />
+      <button id="searchBtn">Buscar</button>
+      <button id="focusSP">Centralizar SP</button>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <aside id="sidebar">
+    <div class="sidebar-section">
+      <h3>Rotas</h3>
+      <div class="route-controls">
+        <select id="originSelect"><option>Origem...</option></select>
+        <select id="destSelect"><option>Destino...</option></select>
+        <button id="calcRouteBtn">Calcular rota</button>
+        <button id="clearRouteBtn">Limpar</button>
+      </div>
+      <div id="routeInfo"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Linhas</h3>
+      <div id="linesList"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Status</h3>
+      <div id="progressArea"><em>Carregando dados...</em></div>
+    </div>
+  </aside>
+
+  <!-- libs -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- main -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root{
+  --sidebar-width: 360px;
+  --topbar-height: 60px;
+  --accent: #0078d4;
+  --muted: #666;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, "Helvetica Neue", Arial, sans-serif;color:#222;background:#f6f7f9}
+
+/* Top bar */
+#topbar{
+  position:fixed;left:0;right:var(--sidebar-width);top:0;height:var(--topbar-height);
+  background:linear-gradient(90deg, rgba(0,120,212,0.95), rgba(0,100,180,0.95));
+  color:white;display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:700;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+#topbar .title{font-weight:700}
+#topbar .controls{display:flex;gap:8px;align-items:center}
+#topbar input{padding:8px;border-radius:6px;border:0;min-width:220px}
+#topbar button{padding:8px 10px;border-radius:6px;border:0;background:#fff;color:var(--accent);font-weight:600;cursor:pointer}
+
+/* Map area */
+#map{
+  position:fixed;top:var(--topbar-height);left:0;right:var(--sidebar-width);bottom:0;z-index:1;
+  border-right:1px solid rgba(0,0,0,0.06);
+}
+
+/* Sidebar */
+#sidebar{
+  position:fixed;top:0;right:0;width:var(--sidebar-width);height:100%;background:#fff;border-left:1px solid #e6e6e6;padding:12px;overflow:auto;z-index:800;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.04);
+}
+.sidebar-section{margin-bottom:14px}
+.sidebar-section h3{margin:6px 0 8px 0;font-size:15px}
+.route-controls{display:flex;flex-direction:column;gap:6px}
+.route-controls select{padding:8px;border-radius:6px;border:1px solid #ddd}
+.route-controls button{padding:8px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+#routeInfo{margin-top:10px;font-size:14px;color:var(--muted)}
+
+#lineBadge{display:flex;flex-wrap:wrap;gap:6px}
+.line-badge{display:inline-block;padding:6px 10px;border-radius:500px;color:#fff;font-size:13px;cursor:pointer}
+.line-badge muted{opacity:0.6}
+
+#progressArea{font-size:13px;color:#444}
+
+/* small screens */
+@media (max-width:950px){
+  #sidebar{display:none}
+  #map{right:0}
+  #topbar{right:0}
+  #topbar input{min-width:120px}
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+}
+
+header {
+  background: #b22222;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+#map {
+  height: 90vh;
+  width: 100%;
+}
+
+.leaflet-popup-content {
+  font-size: 14px;
+  font-weight: bold;
+}
